@@ -1,0 +1,42 @@
+<!-- <h2 >{{result.Global.NewConfirmed}}</h2> -->
+<!-- <div>
+    <h2 *ngFor="let r of result.Countries">{{r.Country}}<span>:-{{r.CountryCode}} </span><span>:-{{r.<span>:-{{r.Slug}} </span>}} </span></h2>
+
+</div> -->
+<div class="container" id="countrielist">            
+    <table class="table table-hover  table-dark  table-responsive ">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>slug</th>
+          <th>NewConfirmed</th>
+          <th>TotalConfirmed</th>
+          <th>NewDeaths</th>
+          <th>TotalDeaths</th>
+          <th>NewRecovered</th>
+          <th>TotalRecovered</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of result.Countries">
+          <td>{{r.Country}}</td>
+          <td>{{r.Slug}}</td>
+          <td>{{r.NewConfirmed}}</td>
+          <td>{{r.TotalConfirmed}}</td>
+          <td>{{r.NewDeaths}}</td>
+          <td>{{r.TotalDeaths}}</td>
+          <td>{{r.NewRecovered}}</td>
+          <td>{{r.TotalRecovered}}</td>
+          <td>{{r.Date}}</td>
+        </tr>
+       
+       
+      </tbody>
+    </table>
+    <div>
+        <button class="btn btn-warning ml-1159 top"><a href="#top" class="text-white"><i class="fa fa-arrow-up"
+              aria-hidden="true"></i></a></button>
+      </div>
+  </div>
+

@@ -1,0 +1,60 @@
+<div class="container-fluid sub_section pt-5 pb-5" id="contact">
+  <div class="section_header text-center mb-5 mt-2">
+    <h1>Contact us</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-12">
+      <form name="form" [formGroup]="form" (ngSubmit)="form.valid && submit()">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" formControlName="firstName"
+            [ngClass]="{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}" required />
+          <div class="invalid-feedback">
+            <div>First Name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastname">LastName:</label>
+          <input type="text" class="form-control" formControlName="lastname"
+            [ngClass]="{'is-invalid':form.get('lastname').touched && form.get('lastname').invalid}" required />
+          <div class="invalid-feedback">
+            <div>
+              Last Name is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" formControlName="Email"
+            [ngClass]="{'is-invalid':form.get('Email').touched && form.get('Email').invalid}" required />
+          <div *ngIf="form.get('Email').touched && form.get('Email').invalid" class="invalid-feedback">
+            <div *ngIf="form.get('Email').errors.required">
+              Email is required
+            </div>
+            <div *ngIf="form.get('Email').errors.email">
+              Enter valid email address
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">mobile</label>
+          <input type="password" class="form-control" formControlName="password"
+            [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}" />
+          <div *ngIf="form.get('password').touched && form.get('password').invalid" class="invalid-feedback">
+            <div *ngIf="form.get('password').errors.required">mobile number is required</div>
+            <div *ngIf="form.get('password').errors.minlength">Enter valid number</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="radio" class="form-controlName" value="male" formControlName="gender">Male
+          <input type="radio" class="form-controlName" value="female" formControlName="gender">FeMale
+        </div>
+        <div>
+          <button class="btn btn-primary" [disabled]="!form.valid">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
